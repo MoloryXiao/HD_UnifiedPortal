@@ -39,6 +39,7 @@
 
 </head>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
     <%@include file="header.jsp"%>
     <div id="wrapper">
@@ -72,16 +73,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd">
-                                            <td>100185</td>
-                                            <td>吴军</td>
-                                            <td>男</td>
-                                            <td class="center">校长</td>
-                                            <td class="center">2005-06-10</td>
-                                            <td class="center">1971-01-08</td>
-                                            <td class="center">8500元/月</td>
-                                            <td><button type="submit" class="btn btn-success">修改</button></td>
-                                        </tr>
+                                        <c:forEach items="${teacherList}" var="teacher">
+                                            <tr class="odd">
+                                                <td>${teacher.no}</td>
+                                                <td>${teacher.name}</td>
+                                                <td>
+                                                    <c:if test="${teacher.sex eq 1}">
+                                                        男
+                                                    </c:if>
+                                                    <c:if test="${teacher.sex eq 0}">
+                                                        女
+                                                    </c:if>
+                                                </td>
+                                                <td class="center">${teacher.job_title}</td>
+                                                <td class="center">${teacher.admission_time}</td>
+                                                <td class="center">${teacher.birthday}</td>
+                                                <td class="center">${teacher.salary}元/月</td>
+                                                <td><button type="submit" class="btn btn-success">修改</button></td>
+                                            </tr>
+                                        </c:forEach>
+
                                         <tr class="odd">
                                             <td>100081</td>
                                             <td>李乐民</td>

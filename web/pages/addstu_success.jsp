@@ -62,7 +62,7 @@
                         </p>
                     </div>
                     <div class="panel-footer">
-                        <a class="btn btn-success" href="pages/addstu.jsp">确认</a>o
+                        <a class="btn btn-success" href="pages/addstu.jsp">确认</a>
                     </div>
                 </div>
             </div>

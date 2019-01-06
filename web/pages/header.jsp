@@ -263,7 +263,7 @@
                                 <a href="addteacher.jsp">教职工添加</a>
                             </li>
                             <li>
-                                <a href="setteacher.jsp">教职工任免</a>
+                                <a href="setteacher">教职工任免</a>
                             </li>
                         </ul>
                     </li>

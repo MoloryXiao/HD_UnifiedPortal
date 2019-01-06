@@ -24,7 +24,6 @@ public class AddStudentServlet extends HttpServlet {
         stu.setBirthday(request.getParameter("stu_birthday"));
         stu.setAdmissionTime(request.getParameter("stu_admissiondate"));
         stu.setClassNo(Integer.parseInt(request.getParameter("stu_class")));
-
         // 使用学生服务类处理业务逻辑
         StudentService studentService = new StudentService();
         if (studentService.addStu(stu)) {
@@ -33,6 +32,7 @@ public class AddStudentServlet extends HttpServlet {
             request.getRequestDispatcher("pages/addstu_success.jsp").forward(request,response);
         }else{
             request.getRequestDispatcher("pages/addstu_fail.jsp").forward(request,response);
+
         }
     }
 

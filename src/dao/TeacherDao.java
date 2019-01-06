@@ -4,8 +4,10 @@ import bean.Student;
 import bean.Teacher;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class TeacherDao {
     public boolean addStudent(Teacher teacher){
@@ -28,5 +30,18 @@ public class TeacherDao {
             System.out.println("dao:2 level error.");
             return false;
         }
+    }
+
+    public List<Teacher> queryTeacher() {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        QueryRunner queryRunner = new QueryRunner(dataSource);
+        String sql = "SELECT * FROM Teacher";
+        try {
+            List<Teacher> teacherList = queryRunner.query(sql,new BeanListHandler<Teacher>(Teacher.class));
+            return teacherList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

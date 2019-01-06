@@ -3,6 +3,8 @@ package service;
 import bean.Teacher;
 import dao.TeacherDao;
 
+import java.util.List;
+
 public class TeacherService {
     public boolean addTeacher(Teacher teacher){
         if (teacher.getJob_title().equals("-1")) {
@@ -24,5 +26,13 @@ public class TeacherService {
         }else{
             return false;
         }
+    }
+    public List<Teacher> queryTeacher(){
+        TeacherDao teacherDao = new TeacherDao();
+        List<Teacher> teacherList = teacherDao.queryTeacher();
+        if(teacherList != null && teacherList.size()>0){
+            return teacherList;
+        }
+        return null;
     }
 }
