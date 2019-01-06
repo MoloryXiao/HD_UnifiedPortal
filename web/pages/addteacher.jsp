@@ -55,7 +55,7 @@
             			<div class="panel-body">
             				<div class="row">
             					<div class="col-lg-5">
-            						<form role="form" action="/addteacher" method="post">
+            						<form role="form" action="/pages/addteacher" method="post">
             							<div class="form-group">
             								<label>教职工姓名</label>
             								<input class="form-control" name="teacher_name">

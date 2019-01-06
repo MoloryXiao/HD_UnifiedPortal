@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 
-@WebServlet(name = "AddStudent",urlPatterns = "/addstu")
+@WebServlet(name = "AddStudent",urlPatterns = "/pages/addstu")
 public class AddStudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -29,9 +29,9 @@ public class AddStudentServlet extends HttpServlet {
         if (studentService.addStu(stu)) {
             request.setAttribute("sname",stu.getName());
             request.setAttribute("admissionTime",stu.getAdmissionTime());
-            request.getRequestDispatcher("pages/addstu_success.jsp").forward(request,response);
+            request.getRequestDispatcher("addstu_success.jsp").forward(request,response);
         }else{
-            request.getRequestDispatcher("pages/addstu_fail.jsp").forward(request,response);
+            request.getRequestDispatcher("addstu_fail.jsp").forward(request,response);
 
         }
     }

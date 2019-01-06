@@ -55,7 +55,7 @@
             			<div class="panel-body">
             				<div class="row">
             					<div class="col-lg-5">
-            						<form role="form" action="/addstu" method="post">
+            						<form role="form" action="/pages/addstu" method="post">
             							<div class="form-group">
             								<label>姓名</label>
             								<input class="form-control" name="stu_name">

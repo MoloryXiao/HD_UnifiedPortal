@@ -75,7 +75,7 @@
                     </p>
                 </div>
                 <div class="panel-footer">
-                    <a class="btn btn-danger" href="pages/addteacher.jsp">确认</a>
+                    <a class="btn btn-danger" href="addteacher.jsp">确认</a>
                 </div>
             </div>
         </div>

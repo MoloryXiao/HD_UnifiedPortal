@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AddTeacherServlet",urlPatterns = "/addteacher")
+@WebServlet(name = "AddTeacherServlet",urlPatterns = "/pages/addteacher")
 public class AddTeacherServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -31,9 +31,9 @@ public class AddTeacherServlet extends HttpServlet {
             request.setAttribute("teacher_name",teacher.getName());
             request.setAttribute("teacher_title",teacher.getJob_title());
             request.setAttribute("teacher_admissionTime",teacher.getAdmission_time());
-            request.getRequestDispatcher("/pages/addteacher_success.jsp").forward(request,response);
+            request.getRequestDispatcher("addteacher_success.jsp").forward(request,response);
         }else{
-            request.getRequestDispatcher("/pages/addteacher_fail.jsp").forward(request,response);
+            request.getRequestDispatcher("addteacher_fail.jsp").forward(request,response);
         }
 
     }
