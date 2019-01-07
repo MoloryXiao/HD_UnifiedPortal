@@ -32,11 +32,11 @@
 
 </head>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<body>
+<body class="web_bg">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-4" style="margin-top: 10%;">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">统一门户平台登录界面</h3>
@@ -84,6 +84,24 @@
         }
         );
     </script>
+    <style>
+        .web_bg{
+            background: url('../image/stars_background.jpg') no-repeat;
+            position:fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            height:100%;
+            min-width: 1000px;
+            z-index:-10;
+            zoom: 1;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+    </style>
 </body>
-
 </html>
