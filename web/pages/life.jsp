@@ -36,6 +36,7 @@
 
 </head>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <body>
     <%@include file="header.jsp"%>
     <div id="wrapper">
@@ -47,14 +48,34 @@
             	<!-- /.col-lg-12 -->
             </div>
             <div class="row" style="margin-left: 3px;">
-                <h4>姓名：吴军</h4>
-                <h4>性别：男</h4>
-                <h4>职称：校长</h4>
-                <h4>教职类型：行政</h4>
-                <h4>工资：9500元/月</h4>
-                <h4>入职时间：2002-09-03</h4>
-                <h4>所属学院：计算机科学与工程学院</h4>
-                <h4>在职情况：在职</h4>
+                <h4>姓名：${teacher.name}</h4>
+                <h4>性别：${teacher.sex}</h4>
+                <h4>职称：${teacher.job_title}</h4>
+                <h4>教职类型：
+					<c:if test="${teacher.job_type eq 1}">
+						辅导员
+					</c:if>
+					<c:if test="${teacher.job_type eq 2}">
+						任课老师
+					</c:if>
+					<c:if test="${teacher.job_type eq 3}">
+						行政老师
+					</c:if>
+					<c:if test="${teacher.job_type eq 4}">
+						校领导
+					</c:if>
+				</h4>
+                <h4>工资：${teacher.salary}元/月</h4>
+                <h4>入职时间：${teacher.admission_time}</h4>
+                <h4>所属学院：计算机学院</h4>
+                <h4>在职情况：
+					<c:if test="${teacher.job_status eq 0}">
+						离职
+					</c:if>
+					<c:if test="${teacher.job_status eq 1}">
+						在职
+					</c:if>
+				</h4>
             </div>
             <div class="row" style="margin-top: 30px;">
             	<div class="col-lg-3 col-md-6">
@@ -72,7 +93,7 @@
             			</div>
             			<a href="#">
             				<div class="panel-footer">
-            					<span class="pull-left">E卡通余额：120.50元</span>
+            					<span class="pull-left">E卡通余额：${livingCost.yicard_balance}元</span>
             					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
             					<div class="clearfix"></div>
             				</div>
@@ -94,7 +115,7 @@
             			</div>
             			<a href="#">
             				<div class="panel-footer">
-            					<span class="pull-left">水费余额：53.80元</span>
+            					<span class="pull-left">水费余额：${livingCost.water_balance}元</span>
             					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
             					<div class="clearfix"></div>
             				</div>
@@ -118,7 +139,7 @@
             			</div>
             			<a href="#">
             				<div class="panel-footer">
-            					<span class="pull-left">电费余额：20.45元</span>
+            					<span class="pull-left">电费余额：${livingCost.electric_balance}元</span>
             					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
             					<div class="clearfix"></div>
             				</div>
@@ -140,7 +161,7 @@
             			</div>
             			<a href="#">
             				<div class="panel-footer">
-            					<span class="pull-left">网费月租：80元/100M</span>
+            					<span class="pull-left">网费月租：${livingCost.network_fee}元/100M</span>
             					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
             					<div class="clearfix"></div>
             				</div>

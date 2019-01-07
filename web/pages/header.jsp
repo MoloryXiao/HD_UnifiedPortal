@@ -268,7 +268,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="life.jsp"><i class="fa fa-edit fa-fw"></i> 我的生活</a>
+                        <a href="life"><i class="fa fa-edit fa-fw"></i> 我的生活</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> 公共服务<span class="fa arrow"></span></a>
