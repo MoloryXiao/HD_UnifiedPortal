@@ -69,11 +69,27 @@ public class TeacherDao {
         int row = 0;
         try {
             row = queryRunner.update(sql,teacherTitle,teacherID);
-            dataSource.close();
         } catch (SQLException e) {
-            dataSource.close();
             e.printStackTrace();
         }
+        dataSource.close();
+        if(row > 0)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean updateTeacherType(int teacherID, int teacherType) {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        QueryRunner queryRunner = new QueryRunner(dataSource);
+        String sql = "UPDATE Teacher SET job_type = ? WHERE no = ? ";
+        int row = 0;
+        try {
+            row = queryRunner.update(sql,teacherType,teacherID);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        dataSource.close();
         if(row > 0)
             return true;
         else

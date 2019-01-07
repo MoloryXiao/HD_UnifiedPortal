@@ -48,8 +48,16 @@
             	<!-- /.col-lg-12 -->
             </div>
             <div class="row" style="margin-left: 3px;">
+				<h4>工号：${teacher.no}</h4>
                 <h4>姓名：${teacher.name}</h4>
-                <h4>性别：${teacher.sex}</h4>
+                <h4>性别：
+					<c:if test="${teacher.sex eq 1}">
+						男
+					</c:if>
+					<c:if test="${teacher.sex eq 0}">
+						女
+					</c:if>
+				</h4>
                 <h4>职称：${teacher.job_title}</h4>
                 <h4>教职类型：
 					<c:if test="${teacher.job_type eq 1}">

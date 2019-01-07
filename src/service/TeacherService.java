@@ -49,4 +49,9 @@ public class TeacherService {
         TeacherDao teacherDao = new TeacherDao();
         teacherDao.updateTeacherTitle(teacherID,teacherTitle);
     }
+
+    public void updateTeacherType(int teacherID, int teacherType) {
+        TeacherDao teacherDao = new TeacherDao();
+        teacherDao.updateTeacherType(teacherID,teacherType);
+    }
 }

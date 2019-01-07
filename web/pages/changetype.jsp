@@ -99,6 +99,15 @@
             									<option value="辅导员">辅导员</option>
             								</select>
             							</div>
+										<div class="form-group">
+											<label>类型</label>
+											<select class="form-control" name="teacher_type">
+												<option value="1">辅导员</option>
+												<option value="2">任课老师</option>
+												<option value="3">行政老师</option>
+												<option value="4">校领导</option>
+											</select>
+										</div>
             							<button type="submit" class="btn btn-outline btn-success">更新</button>
             						</form>
             					</div>

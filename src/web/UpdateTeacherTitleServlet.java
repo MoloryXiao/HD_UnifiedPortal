@@ -15,8 +15,10 @@ public class UpdateTeacherTitleServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         int teacherID = Integer.parseInt(request.getParameter("teacher_no"));
         String teacherTitle = request.getParameter("teacher_title");
+        int teacherType = Integer.parseInt(request.getParameter("teacher_type"));
         TeacherService teacherService = new TeacherService();
         teacherService.updateTeacherTitle(teacherID,teacherTitle);
+        teacherService.updateTeacherType(teacherID,teacherType);
         response.sendRedirect("setteacher");
     }
 
