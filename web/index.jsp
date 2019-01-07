@@ -14,6 +14,6 @@
   $END$
   </body>
   <script language="javascript" type="text/javascript">
-      window.location.href='pages/index.jsp';
+      window.location.href='pages/login.jsp';
   </script>
 </html>
