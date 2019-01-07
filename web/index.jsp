@@ -8,9 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>统一门户平台</title>
   </head>
   <body>
   $END$
   </body>
+  <script language="javascript" type="text/javascript">
+      window.location.href='pages/index.jsp';
+  </script>
 </html>
