@@ -58,7 +58,7 @@
             			</div>
             			<!-- /.panel-heading -->
             			<div class="panel-body">
-                            <form action="changetype.jsp">
+                            <form>
                                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
@@ -89,7 +89,9 @@
                                                 <td class="center">${teacher.admission_time}</td>
                                                 <td class="center">${teacher.birthday}</td>
                                                 <td class="center">${teacher.salary}元/月</td>
-                                                <td><button type="submit" class="btn btn-success">修改</button></td>
+                                                <td><a class="btn btn-success" onclick="updateInfo('${teacher.no}')">
+                                                    修改
+                                                </a></td>
                                             </tr>
                                         </c:forEach>
 
@@ -236,7 +238,14 @@
         });
     });
     </script>
-    
+
+    <!-- table button of updating -->
+    <script type="text/javascript">
+        function updateInfo(teacherID){
+            var jump_url = 'changeType_page?id='+teacherID;
+            window.location.href = jump_url;
+        }
+    </script>
 </body>
 
 </html>

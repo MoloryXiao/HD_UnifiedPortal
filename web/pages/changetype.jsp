@@ -36,6 +36,7 @@
 
 </head>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
     <%@include file="header.jsp"%>
     <div id="wrapper">
@@ -54,37 +55,48 @@
             			</div>
             			<div class="panel-body">
             				<div class="row">
-            					<div class="col-lg-2">
-            						<form role="form" action="setteacher.jsp">
+            					<div class="col-lg-3">
+            						<form role="form" action="updateTeacherTitle" method="post">
+										<div class="form-group">
+											<label>工号：${teacher.no}</label>
+											<input name="teacher_no" value="${teacher.no}" hidden>
+										</div>
             							<div class="form-group">
-            								<label>姓名：傅彦</label>
+            								<label>姓名：${teacher.name}</label>
             							</div>
                                         <div class="form-group">
-                                        	<label>性别：男</label>
+                                        	<label>性别：
+											<c:if test="${teacher.sex eq 1}">
+												男
+											</c:if>
+											<c:if test="${teacher.sex eq 0}">
+												女
+											</c:if>
+											</label>
                                         </div>
             							<div class="form-group">
-            								<label>生源地：广东省深圳市</label>
+            								<label>生源地：${teacher.birthplace}</label>
             							</div>   
                                         <div class="form-group">
-                                        	<label>生日：1971-01-02</label>
+                                        	<label>生日：${teacher.birthday}</label>
                                         </div>   
                                         <div class="form-group">
-                                        	<label>入职时间：2005-02-01</label>
+                                        	<label>入职时间：${teacher.admission_time}</label>
                                         </div>   
             							<div class="form-group">
             								<label>所属学院：计算机学院</label>
             							</div>
                                         <div class="form-group">
-                                        	<label>工资：8500元/月</label>
+                                        	<label>工资：${teacher.salary}元/月</label>
                                         </div>
             							<div class="form-group">
             								<label>职称</label>
-            								<select class="form-control">
-            									<option>正教授</option>
-            									<option>副教授</option>
-            									<option>讲师</option>
-            									<option>实验员</option>
-            									<option>辅导员</option>
+            								<select class="form-control" name="teacher_title">
+            									<option value="正教授">正教授</option>
+            									<option value="副教授">副教授</option>
+            									<option value="讲师">讲师</option>
+            									<option value="实验员">实验员</option>
+            									<option value="辅导员">辅导员</option>
             								</select>
             							</div>
             							<button type="submit" class="btn btn-outline btn-success">更新</button>

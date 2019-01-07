@@ -16,7 +16,9 @@ public class StudentDao {
         try {
             row = queryRunner.update(insertSQL,stu.getName(),stu.getSex(),stu.getBirthday(),stu.getBirthplace(),
                     stu.getAdmissionTime(),stu.getClassNo());
+            dataSource.close();
         } catch (SQLException e) {
+            dataSource.close();
             e.printStackTrace();
             return false;
         }

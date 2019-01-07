@@ -21,18 +21,32 @@ public class TeacherService {
         }
 
         TeacherDao teacherDao = new TeacherDao();
-        if (teacherDao.addStudent(teacher)) {
+        if (teacherDao.addTeacher(teacher)) {
             return true;
         }else{
             return false;
         }
     }
-    public List<Teacher> queryTeacher(){
+    public List<Teacher> queryAllTeachers(){
         TeacherDao teacherDao = new TeacherDao();
-        List<Teacher> teacherList = teacherDao.queryTeacher();
+        List<Teacher> teacherList = teacherDao.queryAllTeachers();
         if(teacherList != null && teacherList.size()>0){
             return teacherList;
         }
         return null;
+    }
+
+    public Teacher queryTeacher(int teacherID) {
+        TeacherDao teacherDao = new TeacherDao();
+        Teacher teacher = teacherDao.queryTeacher(teacherID);
+        if(teacher != null){
+            return teacher;
+        }
+        return null;
+    }
+
+    public void updateTeacherTitle(int teacherID, String teacherTitle) {
+        TeacherDao teacherDao = new TeacherDao();
+        teacherDao.updateTeacherTitle(teacherID,teacherTitle);
     }
 }

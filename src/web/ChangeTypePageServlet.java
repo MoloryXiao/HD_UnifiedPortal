@@ -9,23 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "GetTeacherServlet",urlPatterns = "/pages/setteacher")
-public class GetTeacherServlet extends HttpServlet {
+@WebServlet(name = "ChangeTypePageServlet",urlPatterns = "/pages/changeType_page")
+public class ChangeTypePageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        int teacherID = Integer.parseInt(request.getParameter("id"));
         TeacherService teacherService = new TeacherService();
-        List<Teacher>  teacherList = teacherService.queryAllTeachers();
-        if (teacherList != null) {
-            request.setAttribute("teacherList",teacherList);
-            request.getRequestDispatcher("setteacher.jsp").forward(request,response);
+        Teacher teacher = teacherService.queryTeacher(teacherID);
+        if (teacher != null) {
+            request.setAttribute("teacher",teacher);
+            request.getRequestDispatcher("changetype.jsp").forward(request,response);
         }else{
-            request.getRequestDispatcher("setteacher.jsp").forward(request,response);
+            request.getRequestDispatcher("changetype.jsp").forward(request,response);
         }
     }
 }
